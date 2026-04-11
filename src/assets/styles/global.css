@@ -1,0 +1,245 @@
+@font-face {
+  font-family: "Sign Painter";
+  src: url('../font/signpainter/SignPainterHouseScript.ttf') format('truetype');
+}
+
+:root {
+  --cyan: #00e5ff;
+  --violet: #9b30ff;
+  --violet-dark: #6a00d4;
+  --magenta: #d600ff;
+  --red: #ff1a1a;
+  --red-dim: #a00000;
+  --bg: #03010a;
+  --bg2: #070312;
+  --bg3: #0d0420;
+  --surface: rgba(255,255,255,0.03);
+  --border: rgba(155,48,255,0.2);
+  --text: #e8e0ff;
+  --text-dim: rgba(232,224,255,0.55);
+  --grad: linear-gradient(135deg, var(--cyan), var(--violet), var(--magenta));
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: auto; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Rajdhani', 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+html, body {
+  overflow: auto;
+  height: auto;
+}
+
+/* ── NOISE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ── SMOOTH WRAPPER ── */
+#smooth-wrapper {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  will-change: transform;
+}
+
+/* ── CURSOR GLOW ── */
+.glow-cursor {
+  position: fixed;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  background: radial-gradient(circle, rgba(155,48,255,0.07) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: left 0.08s, top 0.08s;
+}
+
+/* ── DOT GRID TEXTURE ── */
+.dot-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.dot-texture svg { width: 100%; height: 100%; }
+
+/* ── SECTIONS ── */
+section { padding: 6rem 20rem; position: relative; overflow: hidden; }
+
+.section-label {
+  font-size: 1rem; letter-spacing: 0.45em;
+  text-transform: uppercase; color: var(--cyan);
+  margin-bottom: 0.75rem; font-weight: 600;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400; letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+  font-family: "Sign Painter", cursive;
+}
+
+.grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: "Sign Painter", cursive;
+}
+
+.divider {
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--violet), var(--cyan), transparent);
+  opacity: 0.3;
+}
+
+/* ── CLAW SCRATCH ── */
+.claw-scratch {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  will-change: transform;
+}
+.claw-scratch svg { display: block; }
+
+/* ── BOUTONS ── */
+.btn-primary {
+  padding: 0.85rem 2rem;
+  background: var(--grad);
+  color: #fff; text-decoration: none;
+  font-size: 0.85rem; letter-spacing: 0.2em;
+  text-transform: uppercase; font-weight: 700;
+  border: none; cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  display: inline-block;
+}
+.btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+
+.btn-outline {
+  padding: 0.85rem 2rem;
+  background: transparent; color: var(--text);
+  text-decoration: none; font-size: 0.85rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  font-weight: 700;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer; transition: all 0.3s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  display: inline-block;
+}
+.btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+
+/* ── PARALLAX CANVAS ── */
+#parallax-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.moon {
+  position: absolute;
+  top: 8vh; right: 10vw;
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 38%,
+    rgba(220,200,255,0.18) 0%,
+    rgba(155,48,255,0.08) 50%,
+    transparent 70%);
+  border: 1px solid rgba(155,48,255,0.2);
+  box-shadow:
+    0 0 40px rgba(155,48,255,0.12),
+    0 0 80px rgba(0,229,255,0.06),
+    inset 0 0 30px rgba(155,48,255,0.08);
+  will-change: transform;
+}
+.moon::before {
+  content: '';
+  position: absolute;
+  top: 22%; left: 30%;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: rgba(155,48,255,0.12);
+  border: 1px solid rgba(155,48,255,0.15);
+}
+.moon::after {
+  content: '';
+  position: absolute;
+  bottom: 28%; right: 22%;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(0,229,255,0.08);
+  border: 1px solid rgba(0,229,255,0.12);
+}
+
+.star-field { position: absolute; inset: 0; pointer-events: none; }
+.star { position: absolute; border-radius: 50%; background: white; will-change: transform, opacity; }
+
+.deco-cross {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+  opacity: 0.12;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.8s ease forwards; }
+.fade-up-1 { animation-delay: 0.1s; opacity: 0; }
+.fade-up-2 { animation-delay: 0.25s; opacity: 0; }
+.fade-up-3 { animation-delay: 0.4s; opacity: 0; }
+.fade-up-4 { animation-delay: 0.55s; opacity: 0; }
+.fade-up-5 { animation-delay: 0.7s; opacity: 0; }
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.12); opacity: 1; }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1350px) {
+  section { padding: 4rem 5rem; }
+}
+@media (max-width: 768px) {
+  section { padding: 4rem 1.5rem; }
+  footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; align-content: center; }
+
+  #smooth-wrapper {
+    position: static;
+    transform: none !important;
+  }
+  html, body {
+    overflow: auto;
+    height: auto;
+  }
+}
