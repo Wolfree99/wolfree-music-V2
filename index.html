@@ -8,9 +8,269 @@
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
   <!-- EmailJS chargé en CDN pour être disponible globalement -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <style>
+    /* Bouton home */
+    /* ── Isolation totale : tout préfixé .mc- pour ne pas polluer le site hôte ── */
+    #mc-home-btn,
+    #mc-home-btn * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    }
+
+    /* Conteneur positionné fixe */
+    #mc-home-btn {
+      position: fixed;
+      bottom: 28px;
+      left: 28px;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* ── Bouton rond ── */
+    .mc-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #080808;
+      border: 1px solid rgba(200, 16, 46, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color .25s, transform .2s;
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .mc-btn:hover {
+      border-color: rgba(200, 16, 46, 0.8);
+      transform: scale(1.06);
+    }
+
+    #mc-logo-svg {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: block;
+    }
+
+    /* ── Carte preview ── */
+    .mc-preview {
+      position: absolute;
+      bottom: 60px;
+      left: 0;
+      width: 240px;
+      background: #0f0f0f;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 2px solid #c8102e;
+      padding: 18px 20px 16px;
+
+      /* État caché */
+      opacity: 0;
+      transform: translateY(8px) scale(0.97);
+      pointer-events: none;
+      transition: opacity .22s ease, transform .22s ease;
+      transform-origin: bottom left;
+    }
+
+    /* État visible */
+    .mc-preview.mc-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    /* Header : logo + texte + flèche */
+    .mc-preview-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .mc-preview-logo {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .mc-preview-logo svg {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
+
+    .mc-preview-meta {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .mc-preview-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: #f5f5f7;
+      letter-spacing: .2px;
+      line-height: 1;
+    }
+
+    .mc-preview-tag {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c8102e;
+    }
+
+    .mc-preview-arrow {
+      font-size: 14px;
+      color: rgba(245, 245, 247, 0.25);
+      transition: color .2s;
+    }
+
+    .mc-preview:hover .mc-preview-arrow {
+      color: #c8102e;
+    }
+
+    /* Séparateur */
+    .mc-preview-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.06);
+      margin: 12px 0;
+    }
+
+    /* Description */
+    .mc-preview-desc {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(245, 245, 247, 0.35);
+      letter-spacing: .5px;
+      margin: 0 0 12px;
+      line-height: 1.5;
+    }
+
+    /* Lien CTA */
+    .mc-preview-cta {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: rgba(245, 245, 247, 0.45);
+      text-decoration: none;
+      text-transform: lowercase;
+      transition: color .2s;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 10px;
+    }
+
+    .mc-preview-cta:hover {
+      color: #f5f5f7;
+    }
+
+    /* ── Responsive : réduit la position sur très petit écran ─ pour le bouton home ─ */
+    @media (max-width: 480px) {
+      #mc-home-btn {
+        bottom: 16px;
+        left: 16px;
+      }
+      .mc-btn {
+        width: 42px;
+        height: 42px;
+      }
+      #mc-logo-svg {
+        width: 42px;
+        height: 42px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="app"></div>
+
+
+  <div id="mc-home-btn" class="mc-home-widget">
+
+    <!-- ── Bouton rond ── -->
+    <div class="mc-btn" id="mc-trigger" aria-label="Retour au site principal">
+      <!-- REMPLACER le contenu de ce <svg> par ton logo MC -->
+      <img id="mc-logo-svg" src="./src/assets/Logo-MC-rounded.png" alt="MC Logo" />
+    </div>
+
+    <!-- ── Carte preview (apparaît au survol) ── -->
+    <div class="mc-preview" id="mc-preview" role="tooltip">
+      <div class="mc-preview-header" onclick="window.open('https://mathieu-combalbert.fr', '_blank')" style="cursor: pointer;">
+        <div class="mc-preview-logo">
+          <!-- Petit logo dans la card — même SVG, même emplacement de remplacement -->
+          <img src="./src/assets/Logo-MC.png" alt="MC Logo" width="28" height="28"/>
+        </div>
+        <div class="mc-preview-meta">
+          <span class="mc-preview-name">Mathieu Combalbert</span>
+          <span class="mc-preview-tag">Site racine</span>
+        </div>
+        <div class="mc-preview-arrow">↗</div>
+      </div>
+      <!-- <div class="mc-preview-divider"></div> -->
+      <!-- <p class="mc-preview-desc">Développeur · Artiste · Créateur</p> -->
+      <a class="mc-preview-cta" href="https://mathieu-combalbert.fr" target="_blank" rel="noopener">
+        mathieu-combalbert.fr
+      </a>
+    </div>
+  </div>
+
   <script type="module" src="/src/main.js"></script>
+  <script>
+    (function () {
+      var trigger = document.getElementById('mc-trigger');
+      var preview = document.getElementById('mc-preview');
+      var widget  = document.getElementById('mc-home-btn');
+      var timer;
+
+      function show() {
+        clearTimeout(timer);
+        preview.classList.add('mc-visible');
+      }
+
+      function hide() {
+        timer = setTimeout(function () {
+          preview.classList.remove('mc-visible');
+        }, 120); // petit délai pour glisser sur la carte sans qu'elle disparaisse
+      }
+
+      // Survol du bouton
+      trigger.addEventListener('mouseenter', show);
+      trigger.addEventListener('mouseleave', hide);
+
+      // Survol de la carte (maintient ouverte)
+      preview.addEventListener('mouseenter', show);
+      preview.addEventListener('mouseleave', hide);
+
+      // Clic sur le bouton → ouvre le site racine
+      trigger.addEventListener('click', function () {
+        window.open('https://mathieu-combalbert.fr', '_blank', 'noopener');
+      });
+
+      // Touch mobile : tap ouvre, second tap navigue
+      trigger.addEventListener('touchstart', function (e) {
+        if (preview.classList.contains('mc-visible')) {
+          window.open('https://mathieu-combalbert.fr', '_blank', 'noopener');
+        } else {
+          e.preventDefault();
+          show();
+        }
+      }, { passive: false });
+
+      // Ferme si clic ailleurs sur la page
+      document.addEventListener('click', function (e) {
+        if (!widget.contains(e.target)) {
+          preview.classList.remove('mc-visible');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
