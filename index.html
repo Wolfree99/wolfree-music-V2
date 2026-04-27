@@ -1,10 +1,58 @@
 <!DOCTYPE html>
+<!--
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║   ██╗    ██╗ ██████╗ ██╗      ███████╗██████╗ ███████╗███████╗               ║
+║   ██║    ██║██╔═══██╗██║      ██╔════╝██╔══██╗██╔════╝██╔════╝               ║
+║   ██║ █╗ ██║██║   ██║██║      █████╗  ██████╔╝█████╗  █████╗                 ║
+║   ██║███╗██║██║   ██║██║      ██╔══╝  ██╔══██╗██╔══╝  ██╔══╝                 ║
+║   ╚███╔███╔╝╚██████╔╝███████╗ ██║     ██║  ██║███████╗███████╗               ║
+║    ╚══╝╚══╝  ╚═════╝ ╚══════╝ ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝               ║
+║                                                                              ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║                                                                              ║
+║   Développé par  :  Mathieu Combalbert                                       ║
+║   Alias          :  WOLFREE                                                  ║
+║   Localisation   :  Toulouse, France                                         ║
+║   Web            :  https://mathieu-combalbert.fr                            ║
+║   GitHub         :  https://github.com/Wolfree99                             ║
+║                                                                              ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║                                                                              ║
+║   Si tu lis ça, tu es du genre à inspecter le code.                          ║
+║   Respect. 🤘                                                               ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+-->
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <title>WOLFREE — DJ</title>
+  <!-- SEO de base -->
+  <meta name="description" content="WOLFREE — DJ Techno Bounce & Hard Techno basé à Toulouse. Booking, DJ Sets, dates de concerts. Spécialiste Techno, Bounce, Hard Techno, Psytrance, Drum n Bass.">
+  <meta name="keywords" content="DJ Toulouse, DJ Techno, DJ Hard Techno, DJ Bounce, WOLFREE, dj wolfree, wolfree dj, booking DJ, DJ set Toulouse, Mathieu Combalbert">
+  <meta name="author" content="WOLFREE">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wolfree.mathieu-combalbert.fr">
+
+  <!-- Open Graph (partage Facebook, WhatsApp, Discord...) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wolfree.mathieu-combalbert.fr">
+  <meta property="og:title" content="WOLFREE — DJ Techno · Toulouse">
+  <meta property="og:description" content="DJ Techno Bounce & Hard Techno basé à Toulouse. Booking, DJ Sets, dates de concerts.">
+  <meta property="og:image" content="https://wolfree.mathieu-combalbert.fr/og-image.png">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WOLFREE — DJ Techno · Toulouse">
+  <meta name="twitter:description" content="DJ Techno Bounce & Hard Techno basé à Toulouse.">
+  <meta name="twitter:image" content="https://wolfree.mathieu-combalbert.fr/og-image.png">
+
+  <meta name="google-site-verification" content="4ZvOzRv0mUbWk-FA19FjytmObRsSCeid5CQJ4dGJqXo" />
+
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
   <!-- EmailJS chargé en CDN pour être disponible globalement -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -271,6 +319,36 @@
         }
       });
     })();
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "WOLFREE",
+      "description": "DJ Techno Bounce & Hard Techno basé à Toulouse. Spécialiste Techno, Bounce, Hard Techno, Psytrance, Drum n Bass, Acid.",
+      "url": "https://wolfree.mathieu-combalbert.fr",
+      "logo": "https://wolfree.mathieu-combalbert.fr/og-image.png",
+      "genre": ["Techno", "Hard Techno", "Bounce", "Psytrance", "Drum and Bass"],
+      "location": {
+        "@type": "Place",
+        "name": "Toulouse",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Toulouse",
+          "addressCountry": "FR"
+        }
+      },
+      "sameAs": [
+        "https://www.youtube.com/@wolfree95",
+        "https://soundcloud.com/wolfree99",
+        "https://www.instagram.com/wolfree__/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "mat.com.snow@gmail.com",
+        "contactType": "booking"
+      }
+    }
   </script>
 </body>
 </html>
