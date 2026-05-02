@@ -124,7 +124,7 @@ const dates = [
     id: 8, day: '30', month: 'Avril 2026',
     venue: 'La Station',
     city: 'Rave Lucide · Toulouse · 22h00 – 23h00',
-    style: 'Bounce → Hard Bounce', upcoming: true,
+    style: 'Bounce → Hard Bounce', upcoming: false,
   },
 ]
 </script>
