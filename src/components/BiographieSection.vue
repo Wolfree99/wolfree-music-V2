@@ -20,7 +20,7 @@
     <div class="bio-grid">
       <div class="bio-img-wrap">
         <img
-          src="@/assets/photo-mix.png"
+          src="@/assets/Station-up.jpeg"
           alt="WOLFREE en action"
           class="bio-img"
         >

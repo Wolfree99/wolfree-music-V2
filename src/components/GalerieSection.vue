@@ -58,13 +58,18 @@ import { useLightbox } from '@/composables/useLightbox'
 const { open } = useLightbox()
 
 const photos = [
-  { id: 1, src: new URL('@/assets/photo-mix.png', import.meta.url).href,           alt: 'WOLFREE Little O\'Clock', caption: 'Little O\'Clock',         size: 'tall' },
+  { id: 1, src: new URL('@/assets/photo-mix.png', import.meta.url).href,           alt: 'WOLFREE Little O\'Clock', caption: 'Little O\'Clock',           size: 'tall' },
   { id: 2, src: new URL('@/assets/photo-session.png', import.meta.url).href,       alt: 'Session',                 caption: 'Before Fête de la musique', size: '' },
   { id: 3, src: new URL('@/assets/photo-soiree.png', import.meta.url).href,        alt: 'Soirée',                  caption: 'Soirée privée',             size: '' },
-  { id: 4, src: new URL('@/assets/photo-b2b.png', import.meta.url).href,           alt: 'WOLFREE B2B',             caption: 'B2B avec FOXSICK',          size: 'tall' },
-  { id: 5, src: new URL('@/assets/photo-shooting.png', import.meta.url).href,      alt: 'Shooting',                caption: 'Le shooting',               size: 'tall' },
-  { id: 6, src: new URL('@/assets/photo-concentration.png', import.meta.url).href, alt: 'Concentration',           caption: 'Psytrance',                 size: '' },
-  { id: 7, src: new URL('@/assets/photo-littleoclock.png', import.meta.url).href,  alt: 'Little O\'Clock',         caption: 'Live @ Little O\'Clock',    size: '' },
+  { id: 4, src: new URL('@/assets/photo-shooting.png', import.meta.url).href,      alt: 'Shooting',                caption: 'Le shooting',               size: 'tall' },
+  { id: 5, src: new URL('@/assets/photo-concentration.png', import.meta.url).href, alt: 'Concentration',           caption: 'Psytrance',                 size: '' },
+  { id: 6, src: new URL('@/assets/photo-littleoclock.png', import.meta.url).href,  alt: 'Little O\'Clock',         caption: 'Live @ Little O\'Clock',    size: '' },
+  { id: 7, src: new URL('@/assets/Station-up.jpeg', import.meta.url).href,         alt: 'Station',                 caption: 'Live @ Station',            size: 'tall' },
+  { id: 8, src: new URL('@/assets/Station-profil.jpeg', import.meta.url).href,     alt: 'Station',                 caption: 'Live @ Station',            size: 'tall' },
+  { id: 9, src: new URL('@/assets/Station-down.jpeg', import.meta.url).href,       alt: 'Station',                 caption: 'Live @ Station',            size: 'wide' },
+  { id: 10, src: new URL('@/assets/Station-foule.jpeg', import.meta.url).href,     alt: 'Station',                 caption: 'Live @ Station',            size: '' },
+  { id: 12, src: new URL('@/assets/Little-3-pictures.jpeg', import.meta.url).href, alt: 'Little O\'Clock',         caption: 'Live @ Little O\'Clock',    size: 'tall' },
+  { id: 11, src: new URL('@/assets/Little-joy.jpeg', import.meta.url).href,        alt: 'Little O\'Clock',         caption: 'Live @ Little O\'Clock',    size: '' },
 ]
 
 function openLightbox(index) {
