@@ -21,30 +21,6 @@
     <h2 class="section-title">Dates <span class="grad-text">&amp; Lives</span></h2>
 
     <div class="dates-list">
-      <!-- Dates passées -->
-      <div v-for="date in dates.filter(d => !d.upcoming)" :key="date.id" class="date-item">
-        <div>
-          <div class="date-num">{{ date.day }}</div>
-          <div class="date-month">{{ date.month }}</div>
-        </div>
-        <div class="date-info">
-          <p class="date-venue">{{ date.venue }}</p>
-          <p class="date-city">{{ date.city }}</p>
-          <p class="date-style">{{ date.style }}</p>
-        </div>
-        <span class="date-type" :class="{ 'date-upcoming': date.upcoming }">
-          {{ date.upcoming ? 'À venir' : 'Passé' }}
-        </span>
-      </div>
-
-      <!-- Message si aucune date passée -->
-      <div v-if="!dates.some(d => !d.upcoming)" class="no-dates">
-        <p class="no-dates-text">
-          Aucune date confirmée pour le moment.<br>
-          Pour proposer une date ou un booking, utilise le formulaire ci-dessous.
-        </p>
-      </div>
-
       <!-- Prochaines dates -->
       <p class="section-label" style="margin-top: 2rem;">Prochaines dates</p>
 
@@ -66,6 +42,32 @@
 
       <!-- Message si aucune date à venir -->
       <div v-if="!dates.some(d => d.upcoming)" class="no-dates">
+        <p class="no-dates-text">
+          Aucune date confirmée pour le moment.<br>
+          Pour proposer une date ou un booking, utilise le formulaire ci-dessous.
+        </p>
+      </div>
+
+      <!-- Dates passées -->
+      <p class="section-label" style="margin-top: 2rem;">Dates passées</p>
+
+      <div v-for="date in dates.filter(d => !d.upcoming)" :key="date.id" class="date-item">
+        <div>
+          <div class="date-num">{{ date.day }}</div>
+          <div class="date-month">{{ date.month }}</div>
+        </div>
+        <div class="date-info">
+          <p class="date-venue">{{ date.venue }}</p>
+          <p class="date-city">{{ date.city }}</p>
+          <p class="date-style">{{ date.style }}</p>
+        </div>
+        <span class="date-type" :class="{ 'date-upcoming': date.upcoming }">
+          {{ date.upcoming ? 'À venir' : 'Passé' }}
+        </span>
+      </div>
+
+      <!-- Message si aucune date passée -->
+      <div v-if="!dates.some(d => !d.upcoming)" class="no-dates">
         <p class="no-dates-text">
           Aucune date confirmée pour le moment.<br>
           Pour proposer une date ou un booking, utilise le formulaire ci-dessous.
@@ -125,6 +127,18 @@ const dates = [
     venue: 'La Station',
     city: 'Rave Lucide · Toulouse · 22h00 – 23h00',
     style: 'Bounce → Hard Bounce', upcoming: false,
+  },
+  {
+    id: 9, day: '30', month: 'Juin 2026',
+    venue: 'Downtown Factory',
+    city: '@major.a.a.a · Toulouse · 01h00 – 02h00',
+    style: 'Hard Bounce → Hard Techno', upcoming: true,
+  },
+  {
+    id: 10, day: '20', month: 'Juin 2026',
+    venue: 'La Station',
+    city: 'GEMINI Night · Toulouse · 01h00 – 02h00',
+    style: 'All Techno', upcoming: true,
   },
 ]
 </script>

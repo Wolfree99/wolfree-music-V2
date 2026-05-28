@@ -18,10 +18,11 @@
 
 <script setup>
 const artists = [
-  { initials: 'FS', name: 'FOXSICK',  desc: 'B2B · Artiste · Best Friend' },
-  { initials: 'NZ', name: 'Naz',      desc: 'B2B · Artiste · Ami & Mentor' },
-  { initials: 'XX', name: 'XXXXXX',   desc: 'B2B · Artiste · Ancien colloc de Sköne' },
-  { initials: 'TO', name: 'Théo',     desc: 'B2B · Artiste · Membre BDE (ESD)' },
+  { initials: 'FS', name: 'FOXSICK',         desc: 'B2B · Artiste · Best Friend' },
+  { initials: 'NZ', name: 'Naz',             desc: 'B2B · Artiste · Ami & Mentor' },
+  { initials: 'XX', name: 'XXXXXX',          desc: 'B2B · Artiste · Ancien colloc de Sköne' },
+  { initials: 'TO', name: 'Théo',            desc: 'B2B · Artiste · Membre BDE (ESD)' },
+  { initials: 'MJ', name: 'Major.a.a.a',     desc: 'B2B · Artiste · DJ - bientôt producteur' },
 ]
 </script>
 
