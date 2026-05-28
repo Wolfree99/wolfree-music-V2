@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <span class="footer-logo">WOLFREE</span>
+    <img class="footer-logo" src="../assets/WOLFREE.png" alt="WOLFREE" />
     <p class="footer-copy">© 2026 WOLFREE · Tous droits réservés · Toulouse</p>
     <div class="footer-links">
       <a href="https://www.youtube.com/@wolfree95" target="_blank">YouTube</a>
@@ -19,10 +19,10 @@ footer {
   align-items: center; flex-wrap: wrap; gap: 1rem;
 }
 .footer-logo {
-  background: var(--grad);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; font-size: 1rem;
-  font-weight: 700; letter-spacing: 0.35em;
+  display: block;
+  height: 1rem;
+  width: auto;
+  object-fit: contain;
 }
 .footer-copy { font-size: 0.85rem; color: var(--text-dim); letter-spacing: 0.1em; }
 .footer-links { display: flex; gap: 1.5rem; }

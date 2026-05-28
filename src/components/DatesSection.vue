@@ -140,7 +140,7 @@ const dates = [
     style: 'Bounce → Hard Bounce', upcoming: false,
   },
   {
-    id: 9, day: '30', month: 'Juin 2026',
+    id: 9, day: '30', month: 'Mai 2026',
     venue: 'Downtown Factory',
     city: '@major.a.a.a · Toulouse · 01h00 – 02h00',
     style: 'Hard Bounce → Hard Techno', upcoming: true,
