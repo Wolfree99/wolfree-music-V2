@@ -1,8 +1,8 @@
 <template>
   <nav>
     <a href="#hero" class="nav-logo">
-      <img src="@/assets/Wolfree-nbg.png" alt="WOLFREE logo">
-      <span class="nav-logo-text">WOLFREE</span>
+      <img src="@/assets/Wolfree-nbg.png" alt="WOLFREE logo" class="nav-logo-image">
+      <img src="@/assets/WOLFREE.png" alt="WOLFREE" class="nav-logo-text">
     </a>
     <ul class="nav-links">
       <li><a href="#taniere">La Tanière</a></li>
@@ -33,15 +33,13 @@ nav {
   display: flex; align-items: center; gap: 12px;
   text-decoration: none;
 }
-.nav-logo img {
+.nav-logo-image {
   width: 38px; height: 38px; object-fit: contain;
 }
 .nav-logo-text {
-  font-size: 1.4rem; font-weight: 700;
-  letter-spacing: 0.35em;
-  background: var(--grad);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
+  height: 20px;
+  width: auto;
+  display: block;
 }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a {

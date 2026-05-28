@@ -25,7 +25,7 @@
       <p class="section-label" style="margin-top: 2rem;">Prochaines dates</p>
 
       <!-- Dates à venir -->
-      <div v-for="date in dates.filter(d => d.upcoming)" :key="date.id" class="date-item">
+      <div v-for="date in upcomingDates" :key="date.id" class="date-item">
         <div>
           <div class="date-num">{{ date.day }}</div>
           <div class="date-month">{{ date.month }}</div>
@@ -41,7 +41,7 @@
       </div>
 
       <!-- Message si aucune date à venir -->
-      <div v-if="!dates.some(d => d.upcoming)" class="no-dates">
+      <div v-if="!upcomingDates.length" class="no-dates">
         <p class="no-dates-text">
           Aucune date confirmée pour le moment.<br>
           Pour proposer une date ou un booking, utilise le formulaire ci-dessous.
@@ -51,7 +51,7 @@
       <!-- Dates passées -->
       <p class="section-label" style="margin-top: 2rem;">Dates passées</p>
 
-      <div v-for="date in dates.filter(d => !d.upcoming)" :key="date.id" class="date-item">
+      <div v-for="date in visiblePastDates" :key="date.id" class="date-item">
         <div>
           <div class="date-num">{{ date.day }}</div>
           <div class="date-month">{{ date.month }}</div>
@@ -66,8 +66,17 @@
         </span>
       </div>
 
+      <button
+        v-if="hasMorePastDates"
+        type="button"
+        class="see-more-btn"
+        @click="togglePastDates"
+      >
+        {{ showAllPastDates ? 'Voir moins' : 'Voir plus' }}
+      </button>
+
       <!-- Message si aucune date passée -->
-      <div v-if="!dates.some(d => !d.upcoming)" class="no-dates">
+      <div v-if="!pastDates.length" class="no-dates">
         <p class="no-dates-text">
           Aucune date confirmée pour le moment.<br>
           Pour proposer une date ou un booking, utilise le formulaire ci-dessous.
@@ -79,6 +88,8 @@
 </template>
 
 <script setup>
+import { computed, ref } from 'vue'
+
 const dates = [
   {
     id: 1, day: '17', month: 'Mai 2025',
@@ -141,6 +152,20 @@ const dates = [
     style: 'All Techno', upcoming: true,
   },
 ]
+
+const showAllPastDates = ref(false)
+
+const upcomingDates = computed(() => dates.filter(date => date.upcoming))
+
+const pastDates = computed(() => [...dates.filter(date => !date.upcoming)].sort((left, right) => right.id - left.id))
+
+const visiblePastDates = computed(() => (showAllPastDates.value ? pastDates.value : pastDates.value.slice(0, 3)))
+
+const hasMorePastDates = computed(() => pastDates.value.length > 3)
+
+const togglePastDates = () => {
+  showAllPastDates.value = !showAllPastDates.value
+}
 </script>
 
 <style scoped>
@@ -183,5 +208,26 @@ const dates = [
 .no-dates-text {
   font-size: 1rem; color: rgba(232,224,255,0.4);
   line-height: 1.8; font-style: italic;
+}
+.see-more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.25rem;
+  padding: 0.75rem 1.2rem;
+  border: 1px solid rgba(0,229,255,0.35);
+  background: rgba(0,229,255,0.08);
+  color: var(--cyan);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s, border-color 0.3s, color 0.3s;
+}
+.see-more-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(0,229,255,0.14);
+  border-color: rgba(0,229,255,0.55);
 }
 </style>

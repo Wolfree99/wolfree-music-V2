@@ -54,7 +54,7 @@
     </div> -->
 
     <img src="@/assets/Wolfree-nbg.png" alt="WOLFREE" id="hero-logo" class="hero-logo fade-up fade-up-1">
-    <h1 id="hero-name" class="hero-name fade-up fade-up-2">WOLFREE</h1>
+    <img src="@/assets/WOLFREE.png" alt="WOLFREE" id="hero-name" class="hero-name-image fade-up fade-up-2">
     <p id="hero-tagline" class="hero-tagline fade-up fade-up-3">DJ · Toulouse · Electro Techno Music</p>
 
     <div class="hero-genres fade-up fade-up-4">
@@ -124,16 +124,15 @@ const genres = ['Techno', 'Bounce', 'Hard Techno', 'Hard Core', 'Psytrance', 'Dr
   position: relative; z-index: 2;
   will-change: transform, opacity;
 }
-.hero-name {
-  font-size: clamp(4rem, 12vw, 9rem);
-  font-weight: 700; letter-spacing: 0.4em;
-  line-height: 1; text-transform: uppercase;
-  background: var(--grad);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
+.hero-name-image {
+  height: clamp(4rem, 12vw, 9rem);
+  width: auto;
+  max-width: min(90vw, 1000px);
+  object-fit: contain;
   margin-bottom: 1rem;
   position: relative; z-index: 2;
   will-change: transform;
+  display: block;
 }
 .hero-tagline {
   font-size: 1.45rem; letter-spacing: 0.35em;
@@ -169,6 +168,6 @@ const genres = ['Techno', 'Bounce', 'Hard Techno', 'Hard Core', 'Psytrance', 'Dr
 .scroll-ind p { font-size: 0.85rem; letter-spacing: 0.2em; color: var(--text-dim); text-transform: uppercase; }
 
 @media (max-width: 768px) {
-  .hero-name { letter-spacing: 0.15em; }
+  .hero-name-image { max-width: 92vw; }
 }
 </style>
