@@ -143,12 +143,18 @@ const dates = [
     id: 9, day: '30', month: 'Mai 2026',
     venue: 'Downtown Factory',
     city: '@major.a.a.a · Toulouse · 01h00 – 02h00',
-    style: 'Hard Bounce → Hard Techno', upcoming: true,
+    style: 'Hard Bounce → Hard Techno', upcoming: false,
   },
   {
-    id: 10, day: '20', month: 'Juin 2026',
+    id: 10, day: '6', month: 'Juin 2026',
     venue: 'La Station',
-    city: 'GEMINI Night · Toulouse · 20h00 – 03h00',
+    city: 'Toulouse · 00h00 – 01h00',
+    style: 'Hard Techno', upcoming: false,
+  },
+  {
+    id: 11, day: '20', month: 'Juin 2026',
+    venue: 'La Station',
+    city: 'GEMINI Night · Toulouse · 21h00 – 03h00',
     style: 'All Techno', upcoming: true,
   },
 ]

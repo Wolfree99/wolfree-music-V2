@@ -36,7 +36,7 @@
 
     <div class="gallery-grid">
       <div
-        v-for="(photo, index) in photos"
+        v-for="(photo, index) in reversedPhotos"
         :key="photo.id"
         class="gallery-item"
         :class="photo.size"
@@ -66,14 +66,16 @@ const photos = [
   { id: 6, src: new URL('@/assets/photo-littleoclock.png', import.meta.url).href,  alt: 'Little O\'Clock',         caption: 'Live @ Little O\'Clock',    size: '' },
   { id: 7, src: new URL('@/assets/Station-up.jpeg', import.meta.url).href,         alt: 'Station',                 caption: 'Live @ Station',            size: 'tall' },
   { id: 8, src: new URL('@/assets/Station-profil.jpeg', import.meta.url).href,     alt: 'Station',                 caption: 'Live @ Station',            size: 'tall' },
-  { id: 9, src: new URL('@/assets/Station-down.jpeg', import.meta.url).href,       alt: 'Station',                 caption: 'Live @ Station',            size: 'wide' },
-  { id: 10, src: new URL('@/assets/Station-foule.jpeg', import.meta.url).href,     alt: 'Station',                 caption: 'Live @ Station',            size: '' },
+  { id: 9, src: new URL('@/assets/Station-foule.jpeg', import.meta.url).href,      alt: 'Station',                 caption: 'Live @ Station',            size: '' },
+  { id: 10, src: new URL('@/assets/Station-down.jpeg', import.meta.url).href,      alt: 'Station',                 caption: 'Live @ Station',            size: 'wide' },
   { id: 12, src: new URL('@/assets/Little-3-pictures.jpeg', import.meta.url).href, alt: 'Little O\'Clock',         caption: 'Live @ Little O\'Clock',    size: 'tall' },
   { id: 11, src: new URL('@/assets/Little-joy.jpeg', import.meta.url).href,        alt: 'Little O\'Clock',         caption: 'Live @ Little O\'Clock',    size: '' },
 ]
 
+const reversedPhotos = [...photos].reverse()
+
 function openLightbox(index) {
-  open(photos.map(p => p.src), index)
+  open(reversedPhotos.map(p => p.src), index)
 }
 </script>
 
