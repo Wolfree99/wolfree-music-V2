@@ -151,11 +151,17 @@ const dates = [
     city: 'Toulouse · 00h00 – 01h00',
     style: 'Hard Techno', upcoming: false,
   },
+  // {
+  //   id: 11, day: '20', month: 'Juin 2026',
+  //   venue: 'La Station',
+  //   city: 'GEMINI Night · Toulouse · 21h00 – 03h00',
+  //   style: 'All Techno', upcoming: false,
+  // },
   {
-    id: 11, day: '20', month: 'Juin 2026',
-    venue: 'La Station',
-    city: 'GEMINI Night · Toulouse · 21h00 – 03h00',
-    style: 'All Techno', upcoming: true,
+    id: 12, day: '3.4.5', month: 'Juillet 2026',
+    venue: 'Sheep flip - Okoume maggle',
+    city: 'Festival Privé · Dordogne',
+    style: 'Drum & Bass', upcoming: true,
   },
 ]
 
