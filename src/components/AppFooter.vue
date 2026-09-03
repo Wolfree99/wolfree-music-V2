@@ -27,7 +27,7 @@ footer {
 .footer-copy { font-size: 0.85rem; color: var(--text-dim); letter-spacing: 0.1em; }
 .footer-links { display: flex; gap: 1.5rem; }
 .footer-links a {
-  color: rgba(232,224,255,0.3); text-decoration: none;
+  color: rgba(232,224,255,0.6); text-decoration: none;
   font-size: 0.85rem; letter-spacing: 0.15em;
   text-transform: uppercase; transition: color 0.3s;
 }

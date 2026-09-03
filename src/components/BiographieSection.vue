@@ -66,7 +66,7 @@
 <script setup>
 const stats = [
   { num: '10', label: 'Ans de Mix' },
-  { num: '8+', label: 'Sets YouTube' },
+  { num: '9+', label: 'Sets YouTube' },
   { num: '7',  label: 'Genres' },
 ]
 </script>

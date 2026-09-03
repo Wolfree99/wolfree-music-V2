@@ -16,8 +16,31 @@
   --surface: rgba(255,255,255,0.03);
   --border: rgba(155,48,255,0.2);
   --text: #e8e0ff;
-  --text-dim: rgba(232,224,255,0.55);
+  --text-dim: rgba(232,224,255);
   --grad: linear-gradient(135deg, var(--cyan), var(--violet), var(--magenta));
+}
+
+/* ── SCROLLBAR GLOBALE ── */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--violet) transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 4px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--violet);
+  border-radius: 2px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }

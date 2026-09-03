@@ -29,7 +29,7 @@ const artists = [
 <style scoped>
 #b2b { background: var(--bg2); }
 .b2b-intro {
-  color: rgba(232,224,255,0.5); font-size: 1rem;
+  color: rgba(232,224,255); font-size: 1rem;
   margin-bottom: 2rem; line-height: 1.8; max-width: 600px;
 }
 .b2b-grid {

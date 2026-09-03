@@ -154,7 +154,7 @@ async function handleSubmit() {
 <style scoped>
 #contact { background: var(--bg2); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; width: 100%; }
-.contact-intro { color: rgba(232,224,255,0.5); font-size: 0.9rem; line-height: 1.9; margin-bottom: 2rem; }
+.contact-intro { color: rgba(232,224,255); font-size: 0.9rem; line-height: 1.9; margin-bottom: 2rem; }
 
 .form-group { margin-bottom: 1.5rem; }
 .form-label {
@@ -207,7 +207,7 @@ async function handleSubmit() {
 .contact-info-label { font-size: 1rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--cyan); font-weight: 600; }
 .contact-info-val { font-size: 1rem; font-weight: 500; color: var(--text); text-decoration: none; transition: color 0.3s; }
 .contact-info-val:hover { color: var(--cyan); }
-.contact-info-val.small { font-size: 0.85rem; color: rgba(232,224,255,0.6); }
+.contact-info-val.small { font-size: 0.85rem; color: rgba(232,224,255,0.9); }
 
 @media (max-width: 768px) {
   .contact-grid { grid-template-columns: 1fr; }

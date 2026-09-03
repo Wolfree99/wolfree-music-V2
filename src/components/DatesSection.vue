@@ -161,7 +161,13 @@ const dates = [
     id: 12, day: '3.4.5', month: 'Juillet 2026',
     venue: 'Sheep flip - Okoume maggle',
     city: 'Festival Privé · Dordogne',
-    style: 'Drum & Bass', upcoming: true,
+    style: 'Drum & Bass', upcoming: false,
+  },
+  {
+    id: 13, day: '5', month: 'Septembre 2026',
+    venue: 'La Station - MUR/MUR Event',
+    city: 'Open air · Toulouse · 19h30 – 20h30',
+    style: 'Hard Techno', upcoming: true,
   },
 ]
 

@@ -58,7 +58,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
 .lightbox-close {
   position: absolute; top: 2rem; right: 2.5rem;
   background: none; border: none;
-  color: rgba(232,224,255,0.5); font-size: 1.8rem;
+  color: rgba(232,224,255); font-size: 1.8rem;
   cursor: pointer; line-height: 1; transition: color 0.3s;
   font-family: 'Rajdhani', sans-serif;
 }

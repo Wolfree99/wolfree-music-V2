@@ -79,7 +79,7 @@ const socials = [
 <style scoped>
 .meute-section { background: var(--bg); }
 .meute-intro {
-  color: rgba(232,224,255,0.5); font-size: 1.1rem;
+  color: rgba(232,224,255); font-size: 1.1rem;
   margin-bottom: 2.5rem; line-height: 1.8;
 }
 .socials-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
