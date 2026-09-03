@@ -69,6 +69,10 @@ function requestAsset(asset) {
   window.location.href = `mailto:mat.com.snow@gmail.com?subject=Demande visuel — ${asset.title}&body=Bonjour, je souhaite obtenir le visuel "${asset.title}" pour [précise l'usage].`
 }
 
+function asset(filename) {
+  return new URL(`../assets/presskit/${filename}`, import.meta.url).href
+}
+
 const activeCategory = ref('all')
 
 const categories = [
@@ -84,8 +88,8 @@ const assets = [
     title: 'Logo Gradient — PNG transparent',
     desc: null,
     format: 'PNG', bg: '#0d0420',
-    src: '/src/assets/presskit/Logo-color.png',
-    downloadUrl: '/src/assets/presskit/Logo-color.png',
+    src: asset('Logo-color.png'),
+    downloadUrl: asset('Logo-color.png'),
     filename: 'WOLFREE-logo-color.png', initials: null,
   },
   {
@@ -93,8 +97,8 @@ const assets = [
     title: 'Logo Gradient — PNG Rounded Black',
     desc: null,
     format: 'PNG', bg: '#0d0420',
-    src: '/src/assets/presskit/Logo-rond-color.png',
-    downloadUrl: '/src/assets/presskit/Logo-rond-color.png',
+    src: asset('Logo-rond-color.png'),
+    downloadUrl: asset('Logo-rond-color.png'),
     filename: 'WOLFREE-logo-rond-color.png', initials: null,
   },
   {
@@ -102,8 +106,8 @@ const assets = [
     title: 'Logo White — PNG Rounded Black',
     desc: null,
     format: 'PNG', bg: '#0d0420',
-    src: '/src/assets/presskit/Logo-rond-white.png', 
-    downloadUrl: '/src/assets/presskit/Logo-rond-white.png',
+    src: asset('Logo-rond-white.png'), 
+    downloadUrl: asset('Logo-rond-white.png'),
     filename: 'WOLFREE-logo-rond-white.png', initials: null,
   },
   {
@@ -111,8 +115,8 @@ const assets = [
     title: 'Logo White — PNG transparent',
     desc: null,
     format: 'PNG', bg: '#0d0420',
-    src: '/src/assets/presskit/Logo-white.png', 
-    downloadUrl: '/src/assets/presskit/Logo-white.png',
+    src: asset('Logo-white.png'), 
+    downloadUrl: asset('Logo-white.png'),
     filename: 'WOLFREE-logo-white.png', initials: null,
   },
   {
@@ -120,8 +124,8 @@ const assets = [
     title: 'WOLFREE — PNG BANNER',
     desc: null,
     format: 'PNG', bg: '#0d0420',
-    src: '/src/assets/presskit/Wolfree-banner.png',
-    downloadUrl: '/src/assets/presskit/Wolfree-banner.png',
+    src: asset('Wolfree-banner.png'),
+    downloadUrl: asset('Wolfree-banner.png'),
     filename: 'WOLFREE-banner.png', initials: null,
   },
   {
@@ -129,8 +133,8 @@ const assets = [
     title: 'WOLFREE — VERTICAL BANNER',
     desc: null,
     format: 'PNG', bg: '#0d0420',
-    src: '/src/assets/presskit/Wolfree-vertical.png',
-    downloadUrl: '/src/assets/presskit/Wolfree-vertical.png',
+    src: asset('Wolfree-vertical.png'),
+    downloadUrl: asset('Wolfree-vertical.png'),
     filename: 'WOLFREE-vertical.png', initials: null,
   },
   {
@@ -138,8 +142,8 @@ const assets = [
     title: 'WOLFREE — PHOTO PRESSE',
     desc: null,
     format: 'PNG', bg: '#0d0420',
-    src: '/src/assets/presskit/Wolfree-Banner-YT.png',
-    downloadUrl: '/src/assets/presskit/Wolfree-Banner-YT.png',
+    src: asset('Wolfree-Banner-YT.png'),
+    downloadUrl: asset('Wolfree-Banner-YT.png'),
     filename: 'Wolfree-Banner-YT.png', initials: null,
   },
   {
@@ -147,8 +151,8 @@ const assets = [
     title: 'WOLFREE — Banner color',
     desc: null,
     format: 'PNG', bg: '#0d0420',
-    src: '/src/assets/presskit/Wolfree-typo-2-color.png',
-    downloadUrl: '/src/assets/presskit/Wolfree-typo-2-color.png',
+    src: asset('Wolfree-typo-2-color.png'),
+    downloadUrl: asset('Wolfree-typo-2-color.png'),
     filename: 'Wolfree-typo-2-color.png', initials: null,
   },
   {
@@ -156,8 +160,8 @@ const assets = [
     title: 'WOLFREE — Banner white',
     desc: null,
     format: 'PNG', bg: '#0d0420',
-    src: '/src/assets/presskit//Wolfree-typo-2-white.png',
-    downloadUrl: '/src/assets/presskit/Wolfree-typo-2-white.png',
+    src: asset('Wolfree-typo-2-white.png'),
+    downloadUrl: asset('Wolfree-typo-2-white.png'),
     filename: 'Wolfree-typo-2-white.png', initials: null,
   }
 ]
