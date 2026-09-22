@@ -167,6 +167,12 @@ const dates = [
     id: 13, day: '5', month: 'Septembre 2026',
     venue: 'La Station - MUR/MUR Event',
     city: 'Open air · Toulouse · 19h30 – 20h30',
+    style: 'Hard Techno', upcoming: false,
+  },
+  {
+    id: 14, day: '25', month: 'Septembre 2026',
+    venue: 'La Station',
+    city: 'La Station · Toulouse · 22h00 – 00h00',
     style: 'Hard Techno', upcoming: true,
   },
 ]
