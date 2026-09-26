@@ -16,11 +16,12 @@
 const styles = [
   { name: 'Techno',      bpm: '135–150 BPM' },
   { name: 'Bounce',      bpm: '140–180 BPM' },
-  { name: 'Hard Techno', bpm: '145–180 BPM' },
-  { name: 'Hard Core',   bpm: '160–200 BPM' },
   { name: 'Psytrance',   bpm: '145–170 BPM' },
   { name: 'Drum n Bass', bpm: '165–180 BPM' },
   { name: 'Acid',        bpm: '145–160 BPM' },
+  { name: 'Hard Techno', bpm: '145–180 BPM' },
+  { name: 'Hard Core',   bpm: '160–200 BPM' },
+  { name: 'Uptempo',     bpm: '180-200 BPM' },
 ]
 </script>
 

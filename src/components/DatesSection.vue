@@ -173,7 +173,7 @@ const dates = [
     id: 14, day: '25', month: 'Septembre 2026',
     venue: 'La Station',
     city: 'La Station · Toulouse · 22h00 – 00h00',
-    style: 'Hard Techno', upcoming: true,
+    style: 'Hard Techno', upcoming: false,
   },
 ]
 
